@@ -1,13 +1,17 @@
 import React from "react";
 import { AuthTemplate } from "../../components/templates";
-import { LoginForm } from "../../components/organisms";
+import { RegisterForm } from "../../components/organisms";
+
+const handleRegister = () => {
+    console.log("Tap en registro")
+}
 
 const RegisterPage = () => {
     return (
         <AuthTemplate
         title ="Register"
         subtitle="Create a new account">
-            <LoginForm/>
+            <RegisterForm onSubmit={handleRegister}/>
         </AuthTemplate>
     )
 }

@@ -14,8 +14,8 @@ const AuthTemplate = (
                 <Text>{title}</Text>
                 { subtitle && <Text>{subtitle}</Text>}
                 <View>
-            {children}
-            </View>
+                {children}
+                </View>
         </View>
 
     );
