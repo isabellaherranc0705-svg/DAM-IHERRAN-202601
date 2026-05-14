@@ -4,17 +4,19 @@ import { Button } from "../../atoms";
 
 interface RegisterFormProps {
     onSubmit: () => void;
+    disabledAction: boolean,
 }
 
 const RegisterForm = (
-    {onSubmit}: RegisterFormProps
+    {onSubmit, disabledAction}: RegisterFormProps
 ) => {
     return (
         <View>
             <Text>Formulario Registro</Text>
             <Button
                 title="Registrarme"
-                onSubmit={onSubmit}></Button>
+                onSubmit={onSubmit}
+                disabled={disabledAction}></Button>
         </View>
     )
 }
