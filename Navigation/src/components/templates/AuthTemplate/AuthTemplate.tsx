@@ -1,25 +1,23 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, SafeAreaView } from "react-native";
+import styles from "./AuthTemplateStyles";
 
 interface AuthTemplateProps {
-    title: String;
-    subtitle?: String;
+    title: string;
+    subtitle?: string;
     children: React.ReactNode;
 }
 
-const AuthTemplate = (
-    {title, subtitle, children}: AuthTemplateProps) => {
-        return (
-         <View>
-                <Text>{title}</Text>
-                { subtitle && <Text>{subtitle}</Text>}
-                <View>
-                {children}
-                </View>
-        </View>
-
+const AuthTemplate = ({ title, subtitle, children }: AuthTemplateProps) => {
+    return (
+        <SafeAreaView style={styles.safe}>
+            <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+                <Text style={styles.title}>{title}</Text>
+                {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
+                <View style={styles.content}>{children}</View>
+            </ScrollView>
+        </SafeAreaView>
     );
+};
 
-}
-    
 export default AuthTemplate;
